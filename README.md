@@ -84,7 +84,6 @@ MedicalAIAssistant/
 │   ├── app.py                         # Main Streamlit application
 │   └── requirements.txt               # Frontend dependencies
 ├── firebase.json                      # Firebase configuration
-├── .firebaserc                        # Firebase project configuration
 ├── .gitignore                         # Git ignore file
 └── README.md                          # Project documentation
 ```
