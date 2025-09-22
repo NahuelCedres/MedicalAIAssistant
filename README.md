@@ -54,8 +54,8 @@ MedicalAIAssistant/
 │   │   ├── http_file_downloader.py    # HTTP file download service
 │   │   ├── openai_audio_processor.py  # OpenAI Whisper integration
 │   │   ├── json_response_formatter.py # JSON response formatter
-│   │   ├── openai_diagnosis_generator.py # Perplexity AI diagnosis generation
-│   │   └── openai_medical_extractor.py # GPT-4 medical extraction
+│   │   ├── openai_diagnosis_generator.py # Diagnosis generation
+│   │   └── openai_medical_extractor.py # Medical extraction
 │   ├── utils/
 │   │   └── logger.py                  # Logging utilities
 │   ├── main.py                        # Application entry point
@@ -324,8 +324,8 @@ Generate diagnosis and treatment plan.
 
 ### Prerequisites
 
-- Python 3.8+
-- Node.js 16+ (for frontend development)
+- Python 3.12+
+- Node.js 16+ (only for firebase CLI deployment)
 - OpenAI API key
 - Perplexity API key
 - Firebase project (for deployment)
