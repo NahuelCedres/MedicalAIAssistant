@@ -324,7 +324,7 @@ Generate diagnosis and treatment plan.
 
 ### Prerequisites
 
-- Python 3.12+
+- Python 3.13+
 - Node.js 16+ (only for firebase CLI deployment)
 - OpenAI API key
 - Perplexity API key
@@ -334,8 +334,8 @@ Generate diagnosis and treatment plan.
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/your-username/medical-ai-system.git
-cd medical-ai-system/backend
+git clone https://github.com/NahuelCedres/medical-ai-system.git
+cd medicalAIAssistant
 ```
 
 2. **Create virtual environment:**
@@ -346,6 +346,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. **Install dependencies:**
 ```bash
+cd functions
 pip install -r requirements.txt
 ```
 
