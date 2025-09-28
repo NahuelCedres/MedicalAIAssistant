@@ -96,7 +96,7 @@ class MedicalResultFormatter(ResultFormatterInterface):
         with info_col2:
             st.write(f"**Age:** {patient_info.get('age', 'N/A')}")
         with info_col3:
-            st.write(f"**ID:** {patient_info.get('patient_id', 'N/A')}")
+            st.write(f"**ID:** {patient_info.get('identification_number', 'N/A')}")
     
     def _render_symptoms(self, symptoms: List[str]) -> None:
         """Render symptoms section"""

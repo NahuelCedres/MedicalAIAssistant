@@ -24,7 +24,6 @@ class Logger:
             ]
         )
         
-        # Silenciar logs verbosos de librerías externas
         logging.getLogger('transformers').setLevel(logging.WARNING)
         logging.getLogger('torch').setLevel(logging.WARNING)
         logging.getLogger('librosa').setLevel(logging.WARNING)

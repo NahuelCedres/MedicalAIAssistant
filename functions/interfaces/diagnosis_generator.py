@@ -1,4 +1,3 @@
-# interfaces/diagnosis_generator.py
 from abc import ABC, abstractmethod
 from typing import List
 from models.diagnosis_models import DiagnosisGenerationResult, Diagnosis, TreatmentRecommendation

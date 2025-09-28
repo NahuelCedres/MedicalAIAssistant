@@ -23,10 +23,10 @@ class OpenAIMedicalExtractor(MedicalExtractorInterface):
         try:
             self.logger.info("Extracting medical information...")
             
-            # Crear prompt estructurado
+            # Crear prompt
             prompt = self._create_extraction_prompt(text)
             
-            # Hacer request a OpenAI
+            # Request to OpenAI
             response = requests.post(
                 self.base_url,
                 headers={

@@ -149,20 +149,20 @@ class DependencyContainer:
 def create_app() -> flask.Flask:
     """Create Flask App"""
     
-    # Configuración
+    # configuration
     config = AppConfig.from_environment()
     Logger.setup_logging(config.log_level)
     
-    # Container de dependencias
+    # Dependency containers
     container = DependencyContainer(config)
     
-    # Crear app
+    # Create app
     app = flask.Flask(__name__)
     
-    # Registrar middleware de errores
+    # Error Handler Middleware
     ErrorHandlerMiddleware(app, container.response_formatter)
     
-    # Rutas
+    # endpoints
     @app.get("/")
     def home():
         return container.response_formatter.success_response({
@@ -184,7 +184,9 @@ def create_app() -> flask.Flask:
                 "audio_transcription": {
                     "endpoint": "/transcribe-audio",
                     "method": "POST",
-                    "body": {"audio_url": "https://example.com/audio.wav"}
+                    "body": {"audio_url": "https://example.com/audio.wav",
+                             "lenguage": "english"},
+                    
                 },
                 "medical_extraction": {
                     "endpoint": "/extract-medical-info", 
@@ -196,9 +198,18 @@ def create_app() -> flask.Flask:
                     "method": "POST", 
                     "body": {
                         "medical_info": {
-                            "patient_info": {"name": "John Doe", "age": 45},
-                            "symptoms": ["chest pain", "shortness of breath"],
-                            "reason_for_consultation": "chest pain evaluation"
+                            "patient_info": {"name": "John Doe", "age": 45, "gender": "male", "identification_number": "445566"},
+                            "symptoms": [ {
+                                          "symptom": "crushing chest pain",
+                                          "duration": "2 hours",
+                                          "severity": "severe",
+                                          "location": "substernal, radiating to left arm and jaw"
+                                        },
+                                        {
+                                          "symptom": "..."
+                                        }],
+                            "reason_for_consultation": "chest pain evaluation",
+                            "additional_notes": "History of hypertension and high cholester..."
                         },
                         "include_differential": True,
                         "max_diagnoses": 3
@@ -237,12 +248,12 @@ def create_app() -> flask.Flask:
     
     return app
 
-# Configuración Firebase
+# Firebase Settings
 config = AppConfig.from_environment()
 set_global_options(max_instances=config.max_instances)
 initialize_app()
 
-# Crear app
+# Create Flask app
 app = create_app()
 
 @https_fn.on_request(timeout_sec=540, memory=1024)

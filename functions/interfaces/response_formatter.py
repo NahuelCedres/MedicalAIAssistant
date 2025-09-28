@@ -1,4 +1,3 @@
-# interfaces/response_formatter.py
 from abc import ABC, abstractmethod
 from typing import Dict, Any
 import flask

@@ -1,4 +1,3 @@
-# controllers/diagnosis_controller.py
 import time
 import logging
 from typing import Optional
