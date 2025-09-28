@@ -57,8 +57,8 @@ class DependencyContainer:
         self._medical_controller: MedicalController = None
         
         self._diagnosis_controller: DiagnosisController = None
-        self._treatment_recommender: PerplexityTreatmentRecommender = None
-        self._diagnosis_generator: OpenAIDiagnosisGenerator = None
+        self._treatment_recommender: TreatmentRecommenderInterface = None
+        self._diagnosis_generator: DiagnosisGeneratorInterface = None
         
     @property
     def audio_processor(self) -> AudioProcessorInterface:
